@@ -11,7 +11,7 @@ const sauceRoutes = require('./routes/sauce');
 
 dotenv.config();
 
-mongoose.connect(`mongodb+srv://Malifira:Malifira01@test.vyqnb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
+mongoose.connect(`mongodb+srv://${process.env.USER_SUDO}:${process.env.PASSWORD_SUDO}@test.vyqnb.mongodb.net${process.env.DATABASE}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
